@@ -274,6 +274,11 @@ cc_library_static {
         "-Dlint",
     ],
 
+    lto: {
+        thin: true,
+    },
+    whole_program_vtables: true, // Requires ThinLTO
+
     local_include_dirs: ["tzcode/"],
     name: "libc_tzcode",
 }
@@ -383,6 +388,11 @@ cc_library_static {
         "-include freebsd-compat.h",
     ],
 
+    lto: {
+        thin: true,
+    },
+    whole_program_vtables: true, // Requires ThinLTO
+    
     local_include_dirs: [
         "upstream-freebsd/android/include",
     ],
@@ -401,6 +411,11 @@ cc_library_static {
         "-include freebsd-compat.h",
         "-Wframe-larger-than=66000",
     ],
+
+    lto: {
+        thin: true,
+    },
+    whole_program_vtables: true, // Requires ThinLTO
 
     local_include_dirs: [
         "upstream-freebsd/android/include",
@@ -455,6 +470,11 @@ cc_library_static {
         "-DPOSIX_MISTAKE",
         "-include netbsd-compat.h",
     ],
+
+    lto: {
+        thin: true,
+    },
+    whole_program_vtables: true, // Requires ThinLTO
 
     local_include_dirs: [
         "upstream-netbsd/android/include",
@@ -588,6 +608,11 @@ cc_library_static {
         "-include openbsd-compat.h",
     ],
 
+    lto: {
+        thin: true,
+    },
+    whole_program_vtables: true, // Requires ThinLTO
+
     local_include_dirs: [
         "private",
         "stdio",
@@ -611,6 +636,11 @@ cc_library_static {
         "-Wno-sign-compare",
         "-Wframe-larger-than=5000",
     ],
+
+    lto: {
+        thin: true,
+    },
+    whole_program_vtables: true, // Requires ThinLTO
 
     local_include_dirs: [
         "private",
@@ -700,6 +730,11 @@ cc_library_static {
         "-include openbsd-compat.h",
     ],
 
+    lto: {
+        thin: true,
+    },
+    whole_program_vtables: true, // Requires ThinLTO
+
     local_include_dirs: [
         "private",
         "upstream-openbsd/android/include",
@@ -748,6 +783,11 @@ cc_library_static {
         "-include openbsd-compat.h",
     ],
 
+    lto: {
+        thin: true,
+    },
+    whole_program_vtables: true, // Requires ThinLTO
+
     local_include_dirs: [
         "private",
         "upstream-openbsd/android/include",
@@ -773,6 +813,11 @@ cc_library_static {
         "-U_FORTIFY_SOURCE",
         "-D__BIONIC_DECLARE_FORTIFY_HELPERS",
     ],
+
+    lto: {
+        thin: true,
+    },
+    whole_program_vtables: true, // Requires ThinLTO
 
     arch: {
         arm: {
@@ -1431,6 +1476,11 @@ cc_library_static {
         "-fvisibility=hidden",
         "-DLIBC_STATIC",
     ],
+
+    lto: {
+        thin: true,
+    },
+    whole_program_vtables: true, // Requires ThinLTO
 
     whole_static_libs: [
         "gwp_asan",
@@ -2094,6 +2144,12 @@ cc_defaults {
         "-Wall",
         "-Werror",
     ],
+    
+    lto: {
+        thin: true,
+    },
+    whole_program_vtables: true, // Requires ThinLTO
+
     sanitize: {
         never: true,
     },
@@ -2232,6 +2288,10 @@ cc_library_static {
     },
     sdk_version: "minimum",
 
+    lto: {
+        thin: true,
+    },
+    whole_program_vtables: true, // Requires ThinLTO
     defaults: ["crt_and_memtag_defaults"],
 }
 
@@ -2244,6 +2304,10 @@ cc_library_static {
     },
     sdk_version: "minimum",
 
+    lto: {
+        thin: true,
+    },
+    whole_program_vtables: true, // Requires ThinLTO
     defaults: ["crt_and_memtag_defaults"],
 }
 
